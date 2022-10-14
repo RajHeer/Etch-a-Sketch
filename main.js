@@ -10,6 +10,9 @@ function makeGrid (size) {
         const square = document.createElement('div');
         square.style.cssText = 'border: solid black 1px; height: 50px';
         square.textContent = i;
+        square.addEventListener('mouseenter', (e) => {
+            e.target.classList.add('changeBGColour');
+        })
         section.appendChild(square);
     }
     container.appendChild(section);
