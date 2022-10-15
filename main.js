@@ -1,5 +1,7 @@
 // SELECTORS //
 const container = document.querySelector('.container');
+const root = document.querySelector(':root');
+const input = document.querySelector('input');
 
 function makeGrid (size) {
     const section = document.createElement('section');
@@ -20,3 +22,7 @@ function makeGrid (size) {
 
 const size = prompt('How many rows and columns for your grid?');
 makeGrid(size);
+
+input.addEventListener('change', () => {
+    root.style.setProperty('--bg-col', input.value);
+});
