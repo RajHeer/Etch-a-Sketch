@@ -1,16 +1,3 @@
-/* :root {
-    --bg-col: red;
-} */
-
-.container {
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr); */
-}
-
-/* .changeBGColour {
-    background-color: var(--bg-col);
-} */
-
 h1 {
     color: green;
 }
