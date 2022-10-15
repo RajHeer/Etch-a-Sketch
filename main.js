@@ -1,6 +1,6 @@
 // SELECTORS //
 const container = document.querySelector('.container');
-const root = document.querySelector(':root');
+// const root = document.querySelector(':root');
 const input = document.querySelector('input');
 
 function makeGrid (size) {
@@ -13,7 +13,8 @@ function makeGrid (size) {
         square.style.cssText = 'border: solid black 1px; height: 50px';
         square.textContent = i;
         square.addEventListener('mouseenter', (e) => {
-            e.target.classList.add('changeBGColour');
+            // e.target.classList.add('changeBGColour');
+            e.target.style.backgroundColor = input.value;
         })
         section.appendChild(square);
     }
@@ -22,7 +23,3 @@ function makeGrid (size) {
 
 const size = prompt('How many rows and columns for your grid?');
 makeGrid(size);
-
-input.addEventListener('change', () => {
-    root.style.setProperty('--bg-col', input.value);
-});
