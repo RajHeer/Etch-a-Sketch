@@ -22,11 +22,30 @@ function selectMode (mode) {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
         allSquare.addEventListener('mouseenter', (e) => {
-            e.target.style.backgroundColor = mode;
+            if(mode === "rainbow") {
+                e.target.style.backgroundColor = getRainbowColour(); 
+            } else {
+                e.target.style.backgroundColor = mode;
+            }
         });
     });
 };
 
+function getRainbowColour () {
+    let rainbowColours = [
+        "darkorchid",
+        "darkmagenta",
+        "blue",
+        "chartreuse",
+        "yellow",
+        "orange",
+        "red"
+    ];
+    let num = Math.floor(Math.random() * 7 + 1);
+    return rainbowColours[num];
+}
+
+// Allows to only change colour via input when colour radio button is selected //
 input.addEventListener('click', (e) => {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
@@ -41,7 +60,7 @@ input.addEventListener('click', (e) => {
 modeRadios.forEach(modeRadio => {
     modeRadio.addEventListener('change', (e) => {
         if (e.target.value === "rainbow") {
-            selectMode("black");
+            selectMode("rainbow");
         } if (e.target.value === "colour") {
             selectMode(input.value);
         } else if (e.target.value === "eraser") {
