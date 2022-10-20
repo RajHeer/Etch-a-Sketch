@@ -1,6 +1,7 @@
 // SELECTORS //
 const container = document.querySelector('.container');
 const input = document.querySelector('input');
+const modeRadios = document.querySelectorAll('input[type="radio"]');
 
 function makeGrid (size) {
     const section = document.createElement('section');
@@ -11,13 +12,32 @@ function makeGrid (size) {
         const square = document.createElement('div');
         square.style.cssText = 'border: solid black 1px; height: 50px';
         square.textContent = i;
-        square.addEventListener('mouseenter', (e) => {
-            e.target.style.backgroundColor = input.value;
-        })
+        square.setAttribute('id', 'sq');
         section.appendChild(square);
     }
     container.appendChild(section);
 };
+
+function selectMode (mode) {
+    const allSquares = document.querySelectorAll('#sq');
+    allSquares.forEach(allSquare => {
+        allSquare.addEventListener('mouseenter', (e) => {
+            e.target.style.backgroundColor = mode;
+        });
+    });
+};
+
+modeRadios.forEach(modeRadio => {
+    modeRadio.addEventListener('change', (e) => {
+        if (e.target.value === "rainbow") {
+            selectMode("black");
+        } if (e.target.value === "colour") {
+            selectMode(input.value);
+        } else if (e.target.value === "eraser") {
+            selectMode("white");
+        }
+    });
+});
 
 const size = prompt('How many rows and columns for your grid?');
 makeGrid(size);
