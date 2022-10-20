@@ -27,6 +27,24 @@ function selectMode (mode) {
     });
 };
 
+function chooseColour (mode) {
+    const allSquares = document.querySelectorAll('#sq');
+    allSquares.forEach(allSquare => {
+        allSquare.addEventListener('mouseenter', (e) => {
+            e.target.style.backgroundColor = mode;
+        });
+    });
+};
+
+input.addEventListener('click', (e) => {
+    const allSquares = document.querySelectorAll('#sq');
+    allSquares.forEach(allSquare => {
+        allSquare.addEventListener('mouseenter', (e) => {
+            e.target.style.backgroundColor = input.value;
+        });
+    });
+})
+
 modeRadios.forEach(modeRadio => {
     modeRadio.addEventListener('change', (e) => {
         if (e.target.value === "rainbow") {
