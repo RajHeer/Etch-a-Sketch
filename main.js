@@ -27,16 +27,6 @@ function selectMode (mode) {
     });
 };
 
-function chooseColour (mode) {
-    const allSquares = document.querySelectorAll('#sq');
-    allSquares.forEach(allSquare => {
-        allSquare.addEventListener('mouseenter', (e) => {
-            if(document.getElementById('colour').checked)
-                e.target.style.backgroundColor = mode;
-        });
-    });
-};
-
 input.addEventListener('click', (e) => {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
