@@ -11,7 +11,6 @@ function makeGrid (size) {
     for (let i = 1; i < (size*size)+1; i++) {
         const square = document.createElement('div');
         square.style.cssText = 'border: solid black 1px; height: 50px';
-        square.textContent = i;
         square.setAttribute('id', 'sq');
         section.appendChild(square);
     }
@@ -22,11 +21,13 @@ function selectMode (mode) {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
         allSquare.addEventListener('mouseenter', (e) => {
-            if(mode === "rainbow") {
-                e.target.style.backgroundColor = getRainbowColour(); 
-            } else {
-                e.target.style.backgroundColor = mode;
-            }
+            if(e.buttons === 1) {
+                if(mode === "rainbow") {
+                    e.target.style.backgroundColor = getRainbowColour(); 
+                } else {
+                    e.target.style.backgroundColor = mode;
+                }
+            };
         });
     });
 };
@@ -50,9 +51,11 @@ input.addEventListener('click', (e) => {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
         allSquare.addEventListener('mouseenter', (e) => {
-            if(document.getElementById('colour').checked) {
-                e.target.style.backgroundColor = input.value;
-            }
+            if(e.buttons === 1) {
+                if(document.getElementById('colour').checked) {
+                    e.target.style.backgroundColor = input.value;
+                }
+            };
         });
     });
 })
