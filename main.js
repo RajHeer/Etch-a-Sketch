@@ -10,7 +10,7 @@ function makeGrid (size) {
     // for loop written avoid zero index when numbering sqs // 
     for (let i = 1; i < (size*size)+1; i++) {
         const square = document.createElement('div');
-        square.style.cssText = 'border: solid black 1px; height: auto';
+        square.style.cssText = 'border: solid whitesmoke 1px; height: auto';
         square.setAttribute('id', 'sq');
         section.appendChild(square);
     }
