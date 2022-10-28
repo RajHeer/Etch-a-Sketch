@@ -1,3 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 30px auto;
+    width: 600px;
+    height: 600px;
+    background-image: url('./assets/baroque-frame.jpeg');
+    background-size: cover;
+    border: solid transparent;
+}
+
+.container section {
+    height: 400px;
+    width: 405px;
+    margin: 96px;
+}
+
 h1 {
     color: green;
 }
