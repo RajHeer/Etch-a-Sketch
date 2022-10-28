@@ -27,6 +27,7 @@ body {
 
 .options {
     height: 50vh;
+    margin-right: 45px;
 }
 
 .colourpick {
