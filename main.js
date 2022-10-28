@@ -2,9 +2,12 @@
 const container = document.querySelector('.container');
 const input = document.querySelector('input');
 const modeRadios = document.querySelectorAll('input[type="radio"]');
+const sizer = document.querySelector('input[type="range"]');
 
 function makeGrid (size) {
+        
     const section = document.createElement('section');
+    section.setAttribute('id', 'canvas');
     section.style.cssText = `display: grid; grid-template-columns: repeat(${size}, 1fr);`
 
     // for loop written avoid zero index when numbering sqs // 
@@ -72,5 +75,13 @@ modeRadios.forEach(modeRadio => {
     });
 });
 
-const size = prompt('How many rows and columns for your grid?');
-makeGrid(size);
+sizer.addEventListener('change', (e) => {
+    if(container.hasChildNodes()) {
+        const canvas = document.querySelector('#canvas');
+        container.removeChild(canvas);
+    }
+    makeGrid(e.target.value);
+});
+
+// const size = prompt('How many rows and columns for your grid?');
+makeGrid(31);
