@@ -14,35 +14,41 @@
 
     <h1>Etch-a-Sketch</h1>
 
-    <section>
-        <p>Choose your colour:</p>
-            <div>
-                <input type="color"
-                    value="#ff0000"/>
-                <label for="chosen">Chosen colour</label>
-            </div>
-            <fieldset>
-                <legend>Select mode:</legend>
-            
-                <div>
-                  <input type="radio" id="colour" name="mode" value="colour">
-                  <label for="colour">Colour</label>
-                </div>
-            
-                <div>
-                  <input type="radio" id="rainbow" name="mode" value="rainbow">
-                  <label for="rainbow">Rainbow</label>
+    <div class="flex">
+
+        <section class="options">
+
+                <div class="colourpick">
+                    <p>Choose your colour:</p>
+                    <input type="color"
+                        value="#ff0000"/>
+                    <label for="chosen">Chosen colour</label>
                 </div>
 
-                <div>
-                    <input type="radio" id="eraser" name="mode" value="eraser">
-                    <label for="eraser">Eraser</label>
-                  </div>
-            </fieldset>
-    </section>
+                <fieldset>
+                    <legend>Select mode:</legend>
+                
+                    <div>
+                    <input type="radio" id="colour" name="mode" value="colour">
+                    <label for="colour">Colour</label>
+                    </div>
+                
+                    <div>
+                    <input type="radio" id="rainbow" name="mode" value="rainbow">
+                    <label for="rainbow">Rainbow</label>
+                    </div>
 
-    <div class="container">
+                    <div>
+                        <input type="radio" id="eraser" name="mode" value="eraser">
+                        <label for="eraser">Eraser</label>
+                    </div>
+                </fieldset>
+
+        </section>
+
+        <div class="container"></div>
+        
     </div>
-    
+
 </body>
 </html>
