@@ -19,35 +19,40 @@
         <section class="options column">
 
             <div>
-                <label for="size">Clear / Size grid</label>
+                <label for="size">Size</label>
                 <input type="range" id="size" name="size" 
                        min="1" max="101" value="31" step="10">
             </div>
             
             <div class="colourpick">
-                    <p>Choose colour</p>
-                    <input type="color" id="colourChoice"
-                        value="#ff0000"/>
-                </div>
+                <p>Colour</p>
+                <input type="color" id="colourChoice" value="#ff0000"/>
+            </div>
 
-                <fieldset>
-                    <legend>Select mode</legend>
-                
-                    <div>
+            <fieldset>
+                <legend>Mode</legend>
+            
+                <div>
                     <input type="radio" id="colour" name="mode" value="colour">
                     <label for="colour">colour</label>
-                    </div>
-                
-                    <div>
+                </div>
+            
+                <div>
                     <input type="radio" id="rainbow" name="mode" value="rainbow">
                     <label for="rainbow">rainbow</label>
-                    </div>
+                </div>
 
-                    <div>
-                        <input type="radio" id="eraser" name="mode" value="eraser">
-                        <label for="eraser">eraser</label>
-                    </div>
-                </fieldset>
+                <div>
+                    <input type="radio" id="eraser" name="mode" value="eraser">
+                    <label for="eraser">eraser</label>
+                </div>
+            </fieldset>
+
+            <div>
+                <label for="clear">Clear</label>
+                <input type="button" id="clear" name="clear" value="   ">
+                
+            </div>
 
         </section>
 

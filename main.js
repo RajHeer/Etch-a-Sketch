@@ -4,6 +4,7 @@ const input = document.querySelector('input');
 const modeRadios = document.querySelectorAll('input[type="radio"]');
 const sizer = document.querySelector('input[type="range"]');
 const colourInput = document.querySelector('#colourChoice');
+const clearBtn = document.querySelector('#clear');
 
 function makeGrid (size) {
         
@@ -23,6 +24,11 @@ function makeGrid (size) {
 
 function selectMode (mode) {
     const allSquares = document.querySelectorAll('#sq');
+    if (mode === "clear") {
+        allSquares.forEach(allSquare => {
+            allSquare.style.backgroundColor = 'white';
+        })
+    };
     allSquares.forEach(allSquare => {
         allSquare.addEventListener('mouseenter', (e) => {
             if(e.buttons === 1) {
@@ -84,5 +90,9 @@ sizer.addEventListener('change', (e) => {
     makeGrid(e.target.value);
 });
 
-// const size = prompt('How many rows and columns for your grid?');
+clearBtn.addEventListener('click', (e) => {
+    selectMode("clear");
+});
+
+// Default grid size on page load //
 makeGrid(31);
