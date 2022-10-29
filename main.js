@@ -3,6 +3,7 @@ const container = document.querySelector('.container');
 const input = document.querySelector('input');
 const modeRadios = document.querySelectorAll('input[type="radio"]');
 const sizer = document.querySelector('input[type="range"]');
+const colourInput = document.querySelector('#colourChoice');
 
 function makeGrid (size) {
         
@@ -68,7 +69,7 @@ modeRadios.forEach(modeRadio => {
         if (e.target.value === "rainbow") {
             selectMode("rainbow");
         } if (e.target.value === "colour") {
-            selectMode(input.value);
+            selectMode(colourInput.value);
         } else if (e.target.value === "eraser") {
             selectMode("white");
         }
