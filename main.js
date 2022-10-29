@@ -51,13 +51,13 @@ function getRainbowColour () {
 }
 
 // Allows to only change colour via input when colour radio button is selected //
-input.addEventListener('click', (e) => {
+colourInput.addEventListener('click', (e) => {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
         allSquare.addEventListener('mouseenter', (e) => {
             if(e.buttons === 1) {
                 if(document.getElementById('colour').checked) {
-                    e.target.style.backgroundColor = input.value;
+                    e.target.style.backgroundColor = colourInput.value;
                 }
             };
         });
