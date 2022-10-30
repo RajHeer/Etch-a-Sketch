@@ -17,6 +17,9 @@ function makeGrid (size) {
         const square = document.createElement('div');
         square.style.cssText = 'border: solid whitesmoke 1px; height: auto';
         square.setAttribute('id', 'sq');
+        square.addEventListener('click', (e) => {
+            e.target.style.backgroundColor = colourInput.value;
+        });
         section.appendChild(square);
     }
     container.appendChild(section);
@@ -38,6 +41,13 @@ function selectMode (mode) {
                     e.target.style.backgroundColor = mode;
                 }
             };
+        });
+        allSquare.addEventListener('click', (e) => {
+            if(mode === "rainbow") {
+                e.target.style.backgroundColor = getRainbowColour(); 
+            } else {
+                e.target.style.backgroundColor = mode;
+            }
         });
     });
 };
@@ -66,6 +76,9 @@ colourInput.addEventListener('click', (e) => {
                     e.target.style.backgroundColor = colourInput.value;
                 }
             };
+        });
+        allSquare.addEventListener('click', (e) => {
+            e.target.style.backgroundColor = colourInput.value;
         });
     });
 })
