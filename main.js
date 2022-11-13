@@ -1,4 +1,4 @@
-// SELECTORS //
+// SELECTORS ***
 const container = document.querySelector('.container');
 const input = document.querySelector('input');
 const modeRadios = document.querySelectorAll('input[type="radio"]');
@@ -6,13 +6,15 @@ const sizer = document.querySelector('input[type="range"]');
 const colourInput = document.querySelector('#colourChoice');
 const clearBtn = document.querySelector('#clear');
 
+// FUNCTIONS ***
+// func to generate grid; takes 'size' param from slide input
 function makeGrid (size) {
         
     const section = document.createElement('section');
     section.setAttribute('id', 'canvas');
     section.style.cssText = `display: grid; grid-template-columns: repeat(${size}, 1fr);`
 
-    // for loop written avoid zero index when numbering sqs // 
+    // for loop orginally written avoid zero index when numbering sqs 
     for (let i = 1; i < (size*size)+1; i++) {
         const square = document.createElement('div');
         square.style.cssText = 'border: solid whitesmoke 1px; height: auto';
@@ -25,6 +27,7 @@ function makeGrid (size) {
     container.appendChild(section);
 };
 
+// funct to take 'mode' param from radio selector and updates how sq is coloured/'erased'
 function selectMode (mode) {
     const allSquares = document.querySelectorAll('#sq');
     if (mode === "clear") {
@@ -52,6 +55,7 @@ function selectMode (mode) {
     });
 };
 
+// func to return random 'rainbow' colour
 function getRainbowColour () {
     let rainbowColours = [
         "darkorchid",
@@ -66,7 +70,8 @@ function getRainbowColour () {
     return rainbowColours[num];
 }
 
-// Allows to only change colour via input when colour radio button is selected //
+// EVENT LISTENERS ***
+// listener takes colour value for sq to be coloured from colour-picker //
 colourInput.addEventListener('click', (e) => {
     const allSquares = document.querySelectorAll('#sq');
     allSquares.forEach(allSquare => {
@@ -83,6 +88,7 @@ colourInput.addEventListener('click', (e) => {
     });
 })
 
+// listeners on radio buttons for 'mode'
 modeRadios.forEach(modeRadio => {
     modeRadio.addEventListener('change', (e) => {
         if (e.target.value === "rainbow") {
@@ -95,6 +101,7 @@ modeRadios.forEach(modeRadio => {
     });
 });
 
+// listener on range input which clears grid calls makeGrid()
 sizer.addEventListener('change', (e) => {
     if(container.hasChildNodes()) {
         const canvas = document.querySelector('#canvas');
@@ -103,9 +110,11 @@ sizer.addEventListener('change', (e) => {
     makeGrid(e.target.value);
 });
 
+// MISC ***
+// btn to clear gird
 clearBtn.addEventListener('click', (e) => {
     selectMode("clear");
 });
 
-// Default grid size on page load //
+// default grid on page load
 makeGrid(31);
