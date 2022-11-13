@@ -2,8 +2,13 @@
 
 ## About
 
-Drawing app which uses a 'canvas' of either very large or very small squares for colouring. Grid size set by using a range slider. Choose either custom colour or rainbow mode. ENSURE YOU SELECT A MODE. Click to fill a square at time or hold click and move  mouse to 'paint'. 
+A project completed as part of The Odin Project. Original instruction are given [here] (https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
+
 To play click [here](https://rajheer.github.io/Fill-a-Frame/).
+
+## Description
+
+Drawing app which uses a 'canvas' of either very large or very small squares for colouring. Grid size set by using a range slider. Choose either custom colour or rainbow mode. ENSURE YOU SELECT A MODE. Click to fill a square at time or hold click and move  mouse to 'paint'. 
 
 ## Features
 
