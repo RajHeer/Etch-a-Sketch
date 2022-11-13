@@ -2,7 +2,7 @@
 
 ## About
 
-A project completed as part of The Odin Project. Original instruction are given [here] (https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
+A project completed as part of The Odin Project. Original instruction are given [here](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
 
 To play click [here](https://rajheer.github.io/Fill-a-Frame/).
 
