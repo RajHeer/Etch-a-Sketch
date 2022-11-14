@@ -1,5 +1,7 @@
 # Fill-a-Frame
 
+A 'canvas' for your digital artworks.
+
 ## About
 
 Completed as part of The Odin Project cirriculum. Original instruction are [here](https://www.theodinproject.com/lessons/foundations-etch-a-sketch).
